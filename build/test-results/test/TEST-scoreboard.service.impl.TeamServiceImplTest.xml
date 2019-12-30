@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="scoreboard.service.impl.TeamServiceImplTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2019-12-30T07:08:57" hostname="Mayanks-MacBook-Pro.local" time="0.005">
+  <properties/>
+  <testcase name="shouldGetTeam_whenGetTeamCalled" classname="scoreboard.service.impl.TeamServiceImplTest" time="0.001"/>
+  <testcase name="shouldCreateTeam_whenCreateTeamCalled" classname="scoreboard.service.impl.TeamServiceImplTest" time="0.002"/>
+  <testcase name="shouldGetTeamList_whenGetTeamListCalled" classname="scoreboard.service.impl.TeamServiceImplTest" time="0.001"/>
+  <testcase name="shouldUpdateTeamIfActive_whenUpdateTeamIsActiveCalled" classname="scoreboard.service.impl.TeamServiceImplTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

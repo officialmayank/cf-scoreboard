@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="scoreboard.controller.MemberControllerTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2019-12-30T07:08:55" hostname="Mayanks-MacBook-Pro.local" time="1.507">
+  <properties/>
+  <testcase name="shouldCreateMember_whenCreateMemberCalled" classname="scoreboard.controller.MemberControllerTest" time="1.403"/>
+  <testcase name="shouldAddTeamToMember_whenAddTeamToMember" classname="scoreboard.controller.MemberControllerTest" time="0.05"/>
+  <testcase name="shouldRemoveTeamFromMember_whenRemoveTeamFromMember" classname="scoreboard.controller.MemberControllerTest" time="0.053"/>
+  <system-out><![CDATA[12:38:56.359 [Test worker] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Log4j2LoggerProvider
+12:38:56.364 [Test worker] INFO org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.0.18.Final
+12:38:56.372 [Test worker] DEBUG org.hibernate.validator.internal.engine.resolver.TraversableResolvers - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+12:38:56.384 [Test worker] DEBUG org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator - Loaded expression factory via original TCCL
+12:38:56.384 [Test worker] DEBUG org.hibernate.validator.internal.engine.ConfigurationImpl - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
+12:38:56.384 [Test worker] DEBUG org.hibernate.validator.internal.engine.ConfigurationImpl - Setting custom ParameterNameProvider of type org.springframework.validation.beanvalidation.LocalValidatorFactoryBean$1
+12:38:56.388 [Test worker] DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser - Trying to load META-INF/validation.xml for XML based Validator configuration.
+12:38:56.389 [Test worker] DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper - Trying to load META-INF/validation.xml via TCCL
+12:38:56.389 [Test worker] DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper - Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+12:38:56.389 [Test worker] DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser - No META-INF/validation.xml found. Using annotation based configuration only.
+12:38:56.494 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryImpl - HV000234: Using org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator as ValidatorFactory-scoped message interpolator.
+12:38:56.494 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.resolver.TraverseAllTraversableResolver as ValidatorFactory-scoped traversable resolver.
+12:38:56.495 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
+12:38:56.495 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
+12:38:56.495 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
+12:38:56.582 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - 3 mappings in <unknown>
+12:38:56.757 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+12:38:56.785 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+12:38:56.807 [Test worker] INFO org.springframework.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+12:38:56.807 [Test worker] INFO org.springframework.test.web.servlet.TestDispatcherServlet - Initializing Servlet ''
+12:38:56.809 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected AcceptHeaderLocaleResolver
+12:38:56.809 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected FixedThemeResolver
+12:38:56.809 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@4f341a1b
+12:38:56.809 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@68878dc
+12:38:56.810 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+12:38:56.810 [Test worker] INFO org.springframework.test.web.servlet.TestDispatcherServlet - Completed initialization in 3 ms
+12:38:56.851 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - POST "/members?name=MA1&teamId=1", parameters={masked}
+12:38:56.854 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped to scoreboard.controller.MemberController#createMember(String, long)
+12:38:56.905 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+12:38:56.906 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor - Writing [scoreboard.model.Member@29bdf34e]
+12:38:56.917 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Completed 200 OK
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /members
+       Parameters = {name=[MA1], teamId=[1]}
+          Headers = []
+             Body = <no character encoding set>
+    Session Attrs = {}
+
+Handler:
+             Type = scoreboard.controller.MemberController
+           Method = scoreboard.controller.MemberController#createMember(String, long)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"id":0,"name":"MA1","teamId":1}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+12:38:56.971 [Test worker] DEBUG com.jayway.jsonpath.internal.path.CompiledPath - Evaluating path: $['id']
+12:38:56.976 [Test worker] DEBUG com.jayway.jsonpath.internal.path.CompiledPath - Evaluating path: $['name']
+12:38:56.980 [Test worker] DEBUG org.hibernate.validator.internal.engine.resolver.TraversableResolvers - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+12:38:56.981 [Test worker] DEBUG org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator - Loaded expression factory via original TCCL
+12:38:56.981 [Test worker] DEBUG org.hibernate.validator.internal.engine.ConfigurationImpl - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
+12:38:56.981 [Test worker] DEBUG org.hibernate.validator.internal.engine.ConfigurationImpl - Setting custom ParameterNameProvider of type org.springframework.validation.beanvalidation.LocalValidatorFactoryBean$1
+12:38:56.981 [Test worker] DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser - Trying to load META-INF/validation.xml for XML based Validator configuration.
+12:38:56.982 [Test worker] DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper - Trying to load META-INF/validation.xml via TCCL
+12:38:56.982 [Test worker] DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper - Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+12:38:56.982 [Test worker] DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser - No META-INF/validation.xml found. Using annotation based configuration only.
+12:38:56.989 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryImpl - HV000234: Using org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator as ValidatorFactory-scoped message interpolator.
+12:38:56.989 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.resolver.TraverseAllTraversableResolver as ValidatorFactory-scoped traversable resolver.
+12:38:56.989 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
+12:38:56.989 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
+12:38:56.989 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
+12:38:56.993 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - 3 mappings in <unknown>
+12:38:56.997 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+12:38:57.000 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+12:38:57.001 [Test worker] INFO org.springframework.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+12:38:57.001 [Test worker] INFO org.springframework.test.web.servlet.TestDispatcherServlet - Initializing Servlet ''
+12:38:57.001 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected AcceptHeaderLocaleResolver
+12:38:57.001 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected FixedThemeResolver
+12:38:57.002 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@60607246
+12:38:57.002 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@715f6a77
+12:38:57.002 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+12:38:57.002 [Test worker] INFO org.springframework.test.web.servlet.TestDispatcherServlet - Completed initialization in 1 ms
+12:38:57.005 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - PUT "/teams/2/members/1", parameters={}
+12:38:57.006 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped to scoreboard.controller.MemberController#addTeamToMember(long, Long)
+12:38:57.012 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+12:38:57.012 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor - Writing [scoreboard.model.Member@d2cf3d8]
+12:38:57.013 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Completed 200 OK
+
+MockHttpServletRequest:
+      HTTP Method = PUT
+      Request URI = /teams/2/members/1
+       Parameters = {}
+          Headers = []
+             Body = <no character encoding set>
+    Session Attrs = {}
+
+Handler:
+             Type = scoreboard.controller.MemberController
+           Method = scoreboard.controller.MemberController#addTeamToMember(long, Long)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"id":0,"name":"MA3","teamId":3}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+12:38:57.027 [Test worker] DEBUG com.jayway.jsonpath.internal.path.CompiledPath - Evaluating path: $['id']
+12:38:57.027 [Test worker] DEBUG com.jayway.jsonpath.internal.path.CompiledPath - Evaluating path: $['name']
+12:38:57.027 [Test worker] DEBUG com.jayway.jsonpath.internal.path.CompiledPath - Evaluating path: $['teamId']
+12:38:57.031 [Test worker] DEBUG org.hibernate.validator.internal.engine.resolver.TraversableResolvers - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+12:38:57.031 [Test worker] DEBUG org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator - Loaded expression factory via original TCCL
+12:38:57.032 [Test worker] DEBUG org.hibernate.validator.internal.engine.ConfigurationImpl - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
+12:38:57.032 [Test worker] DEBUG org.hibernate.validator.internal.engine.ConfigurationImpl - Setting custom ParameterNameProvider of type org.springframework.validation.beanvalidation.LocalValidatorFactoryBean$1
+12:38:57.032 [Test worker] DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser - Trying to load META-INF/validation.xml for XML based Validator configuration.
+12:38:57.033 [Test worker] DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper - Trying to load META-INF/validation.xml via TCCL
+12:38:57.035 [Test worker] DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper - Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+12:38:57.036 [Test worker] DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser - No META-INF/validation.xml found. Using annotation based configuration only.
+12:38:57.042 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryImpl - HV000234: Using org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator as ValidatorFactory-scoped message interpolator.
+12:38:57.043 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.resolver.TraverseAllTraversableResolver as ValidatorFactory-scoped traversable resolver.
+12:38:57.043 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
+12:38:57.043 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
+12:38:57.043 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
+12:38:57.049 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - 3 mappings in <unknown>
+12:38:57.053 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+12:38:57.056 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+12:38:57.056 [Test worker] INFO org.springframework.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+12:38:57.067 [Test worker] INFO org.springframework.test.web.servlet.TestDispatcherServlet - Initializing Servlet ''
+12:38:57.067 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected AcceptHeaderLocaleResolver
+12:38:57.067 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected FixedThemeResolver
+12:38:57.067 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@38c7ae15
+12:38:57.067 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@256ffba
+12:38:57.068 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+12:38:57.068 [Test worker] INFO org.springframework.test.web.servlet.TestDispatcherServlet - Completed initialization in 1 ms
+12:38:57.069 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - DELETE "/teams/1/members/1", parameters={}
+12:38:57.070 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped to scoreboard.controller.MemberController#removeTeamFromMember(long, long)
+12:38:57.073 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+12:38:57.073 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor - Writing [scoreboard.model.Member@139b1f58]
+12:38:57.073 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Completed 200 OK
+
+MockHttpServletRequest:
+      HTTP Method = DELETE
+      Request URI = /teams/1/members/1
+       Parameters = {}
+          Headers = []
+             Body = <no character encoding set>
+    Session Attrs = {}
+
+Handler:
+             Type = scoreboard.controller.MemberController
+           Method = scoreboard.controller.MemberController#removeTeamFromMember(long, long)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"id":0,"name":"MA2","teamId":2}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+12:38:57.080 [Test worker] DEBUG com.jayway.jsonpath.internal.path.CompiledPath - Evaluating path: $['id']
+12:38:57.081 [Test worker] DEBUG com.jayway.jsonpath.internal.path.CompiledPath - Evaluating path: $['name']
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
