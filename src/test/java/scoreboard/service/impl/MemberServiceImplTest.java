@@ -7,6 +7,7 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import scoreboard.exception.member.TeamAlreadyPresentException;
+import scoreboard.exception.score.TeamNotPresentException;
 import scoreboard.model.Member;
 import scoreboard.model.Team;
 import scoreboard.repository.MemberRepo;
@@ -36,6 +37,8 @@ public class MemberServiceImplTest {
     public void shouldCreateMember_whenCreateMemberCalled() throws Exception {
         Member member = new Member("Mayank", 1L);
         Mockito.when(memberRepo.createMember(Mockito.any(Member.class))).thenReturn(member);
+        Team team = new Team("TA1");
+        Mockito.when(teamRepo.getTeam(1)).thenReturn(team);
         assertThat(memberService.createMember("Mayank", 1L).getName(), is("Mayank"));
     }
 
@@ -48,25 +51,24 @@ public class MemberServiceImplTest {
 
     @Test
     public void shouldAddTeamToMember_whenAddTeamToMemberCalled() throws Exception {
-        Member memberOld = new Member("Maya", 1L);
-        memberOld.setTeamId(null);
-        Member member = new Member("Maya", 1L);
-        Mockito.when(memberRepo.getMember(1)).thenReturn(memberOld);
-        Mockito.when(memberRepo.addTeamToMember(1, 2L)).thenReturn(member);
-        assertThat(memberService.addTeamToMember( 1L, 2L).getName(), is("Maya"));
+        Member member = new Member("Maya", null);
+        Mockito.when(memberRepo.getMember(1)).thenReturn(member);
+        Team team = new Team("TA1");
+        Mockito.when(teamRepo.getTeam(1)).thenReturn(team);
+        Mockito.when(memberRepo.addTeamToMember(1, 1L)).thenReturn(member);
+        assertThat(memberService.addTeamToMember( 1, 1L).getName(), is("Maya"));
     }
 
     @Test(expected = TeamAlreadyPresentException.class)
     public void shouldThrowTeamAlreadyPresentException_whenAddTeamToMemberCalledAndTeamPresent()
-        throws TeamAlreadyPresentException {
-        Member memberOld = new Member("Maya", 1L);
-
+        throws TeamAlreadyPresentException, TeamNotPresentException {
         Member member = new Member("Maya", 1L);
-        Team team = new Team("TA1");
-        team.setIsActive(true);
-        Mockito.when(memberRepo.getMember(1)).thenReturn(memberOld);
+        Team team = new Team("TA");
+        Team newTeam = new Team("TB");
+        Mockito.when(memberRepo.getMember(1)).thenReturn(member);
         Mockito.when(memberRepo.addTeamToMember(1, 2L)).thenReturn(member);
+        Mockito.when(teamRepo.getTeam(2)).thenReturn(newTeam);
         Mockito.when(teamRepo.getTeam(1)).thenReturn(team);
-        memberService.addTeamToMember( 1L, 2L);
+        memberService.addTeamToMember( 1, 2L);
     }
 }

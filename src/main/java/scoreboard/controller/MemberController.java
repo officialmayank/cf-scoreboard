@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import scoreboard.exception.member.TeamInActiveException;
+import scoreboard.exception.score.TeamNotPresentException;
 import scoreboard.model.Member;
 import scoreboard.services.impl.MemberServiceImpl;
 
@@ -20,7 +21,7 @@ class MemberController {
     @RequestMapping(method = RequestMethod.POST, value = "/members")
     public Member createMember(
     		@RequestParam(value="name") String name, @RequestParam(value="teamId") long teamId
-    	) throws TeamInActiveException {
+    	) throws TeamInActiveException, TeamNotPresentException {
         return memberServiceImpl.createMember(name, teamId);
     }
     
