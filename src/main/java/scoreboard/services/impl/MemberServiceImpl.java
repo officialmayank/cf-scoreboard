@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import scoreboard.exception.member.TeamAlreadyPresentException;
 import scoreboard.exception.member.TeamInActiveException;
-import scoreboard.exception.score.TeamNotPresentException;
+import scoreboard.exception.member.TeamNotPresentException;
 import scoreboard.model.Member;
 import scoreboard.model.Team;
 import scoreboard.repository.MemberRepo;

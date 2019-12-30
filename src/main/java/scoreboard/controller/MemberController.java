@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import scoreboard.exception.member.TeamInActiveException;
-import scoreboard.exception.score.TeamNotPresentException;
+import scoreboard.exception.member.TeamNotPresentException;
 import scoreboard.model.Member;
 import scoreboard.services.impl.MemberServiceImpl;
 
