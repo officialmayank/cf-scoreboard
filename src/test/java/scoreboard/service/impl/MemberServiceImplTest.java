@@ -7,7 +7,7 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import scoreboard.exception.member.TeamAlreadyPresentException;
-import scoreboard.exception.score.TeamNotPresentException;
+import scoreboard.exception.member.TeamNotPresentException;
 import scoreboard.model.Member;
 import scoreboard.model.Team;
 import scoreboard.repository.MemberRepo;
