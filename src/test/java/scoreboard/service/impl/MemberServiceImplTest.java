@@ -34,23 +34,23 @@ public class MemberServiceImplTest {
 
     @Test
     public void shouldCreateMember_whenCreateMemberCalled() throws Exception {
-        Member member = new Member("Mayank", 1);
+        Member member = new Member("Mayank", 1L);
         Mockito.when(memberRepo.createMember(Mockito.any(Member.class))).thenReturn(member);
         assertThat(memberService.createMember("Mayank", 1L).getName(), is("Mayank"));
     }
 
     @Test
     public void shouldRemoveTeamFromMember_whenRemoveTeamFromMemberCalled()  {
-        Member member = new Member("Mayan", 1);
+        Member member = new Member("Mayan", null);
         Mockito.when(memberRepo.removeTeamFromMember(1)).thenReturn(member);
         assertThat(memberService.removeTeamFromMember( 1L).getName(), is("Mayan"));
     }
 
     @Test
     public void shouldAddTeamToMember_whenAddTeamToMemberCalled() throws Exception {
-        Member memberOld = new Member("Maya", 1);
+        Member memberOld = new Member("Maya", 1L);
         memberOld.setTeamId(null);
-        Member member = new Member("Maya", 1);
+        Member member = new Member("Maya", 1L);
         Mockito.when(memberRepo.getMember(1)).thenReturn(memberOld);
         Mockito.when(memberRepo.addTeamToMember(1, 2L)).thenReturn(member);
         assertThat(memberService.addTeamToMember( 1L, 2L).getName(), is("Maya"));
@@ -59,9 +59,9 @@ public class MemberServiceImplTest {
     @Test(expected = TeamAlreadyPresentException.class)
     public void shouldThrowTeamAlreadyPresentException_whenAddTeamToMemberCalledAndTeamPresent()
         throws TeamAlreadyPresentException {
-        Member memberOld = new Member("Maya", 1);
+        Member memberOld = new Member("Maya", 1L);
 
-        Member member = new Member("Maya", 1);
+        Member member = new Member("Maya", 1L);
         Team team = new Team("TA1");
         team.setIsActive(true);
         Mockito.when(memberRepo.getMember(1)).thenReturn(memberOld);

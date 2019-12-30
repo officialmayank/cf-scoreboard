@@ -39,14 +39,14 @@ public class MemberControllerTest {
 	@Test
 	public void shouldCreateMember_whenCreateMemberCalled() throws Exception {
 
-        Mockito.when(memberService.createMember(Mockito.anyString(), Mockito.anyLong())).thenReturn(new Member("MA1", 1));
+        Mockito.when(memberService.createMember(Mockito.anyString(), Mockito.anyLong())).thenReturn(new Member("MA1", 1L));
         this.mockMvc.perform(post("/members?name=MA1&teamId=1")).andDo(print()).andExpect(status().isOk())
 			.andExpect(jsonPath("$.id").isNumber()).andExpect(jsonPath("$.name").value("MA1"));
 	}
 	
 	@Test
 	public void shouldRemoveTeamFromMember_whenRemoveTeamFromMember() throws Exception {
-        Mockito.when(memberService.removeTeamFromMember(Mockito.anyLong())).thenReturn(new Member("MA2", 2));
+        Mockito.when(memberService.removeTeamFromMember(Mockito.anyLong())).thenReturn(new Member("MA2", null));
 		this.mockMvc.perform(delete("/members/2")).andDo(print()).andExpect(status().isOk())
 			.andExpect(jsonPath("$.id").isNumber()).andExpect(jsonPath("$.name").value("MA2"))
 			.andExpect(jsonPath("$.teamId").doesNotExist());
@@ -54,7 +54,7 @@ public class MemberControllerTest {
 	
 	@Test
 	public void shouldAddTeamToMember_whenAddTeamToMember() throws Exception {
-        Mockito.when(memberService.addTeamToMember(Mockito.anyLong(), Mockito.anyLong())).thenReturn(new Member("MA3", 3));
+        Mockito.when(memberService.addTeamToMember(Mockito.anyLong(), Mockito.anyLong())).thenReturn(new Member("MA3", 3L));
 
 		this.mockMvc.perform(put("/teams/3/members/3")).andDo(print()).andExpect(status().isOk())
 			.andExpect(jsonPath("$.id").isNumber()).andExpect(jsonPath("$.name").value("MA3"))
