@@ -24,10 +24,9 @@ class MemberController {
         return memberServiceImpl.createMember(name, teamId);
     }
     
-    @RequestMapping(method = RequestMethod.DELETE, value = "/teams/{teamId}/members/{id}")
+    @RequestMapping(method = RequestMethod.DELETE, value = "/members/{id}")
     public Member removeTeamFromMember(
-    		@PathVariable(value="id") long id,
-    		@PathVariable(value="teamId") long teamId
+    		@PathVariable(value="id") long id
     	) {
     	return memberServiceImpl.removeTeamFromMember(id);
     }

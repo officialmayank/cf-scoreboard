@@ -47,15 +47,16 @@ public class MemberControllerTest {
 	@Test
 	public void shouldRemoveTeamFromMember_whenRemoveTeamFromMember() throws Exception {
         Mockito.when(memberService.removeTeamFromMember(Mockito.anyLong())).thenReturn(new Member("MA2", 2));
-		this.mockMvc.perform(delete("/teams/1/members/1")).andDo(print()).andExpect(status().isOk())
-			.andExpect(jsonPath("$.id").isNumber()).andExpect(jsonPath("$.name").value("MA2"));
+		this.mockMvc.perform(delete("/members/2")).andDo(print()).andExpect(status().isOk())
+			.andExpect(jsonPath("$.id").isNumber()).andExpect(jsonPath("$.name").value("MA2"))
+			.andExpect(jsonPath("$.teamId").doesNotExist());
 	}
 	
 	@Test
 	public void shouldAddTeamToMember_whenAddTeamToMember() throws Exception {
         Mockito.when(memberService.addTeamToMember(Mockito.anyLong(), Mockito.anyLong())).thenReturn(new Member("MA3", 3));
 
-		this.mockMvc.perform(put("/teams/2/members/1")).andDo(print()).andExpect(status().isOk())
+		this.mockMvc.perform(put("/teams/3/members/3")).andDo(print()).andExpect(status().isOk())
 			.andExpect(jsonPath("$.id").isNumber()).andExpect(jsonPath("$.name").value("MA3"))
 			.andExpect(jsonPath("$.teamId").value(3));
 	}
